@@ -44,6 +44,7 @@ RUN export PATH=${ANDROID_SDK_ROOT}/platform-tools:$PATH
 
 # setup adb server
 EXPOSE 5037
+EXPOSE 4723
 
 # Install emulator
 RUN echo "y" | sdkmanager "platform-tools" "platforms;android-29" "emulator" && \
