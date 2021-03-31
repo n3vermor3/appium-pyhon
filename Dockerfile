@@ -48,8 +48,8 @@ EXPOSE 4723
 
 # Install emulator
 RUN echo "y" | sdkmanager "platform-tools" "platforms;android-29" "emulator" && \
-    sdkmanager --install "system-images;android-29;google_apis;x86" && \
-    avdmanager create avd -n VitrinaEmulator --device "pixel" -k "system-images;android-29;google_apis;x86"
+    sdkmanager --install "system-images;android-29;google_apis;x86_64" && \
+    avdmanager create avd -n VitrinaEmulator --device "pixel" -k "system-images;android-29;google_apis;x86_64"
 
 # Install nodejs and appium
 RUN apt-get install -y nodejs && \
