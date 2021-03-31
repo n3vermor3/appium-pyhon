@@ -47,7 +47,7 @@ EXPOSE 5037
 EXPOSE 4723
 
 # Install emulator
-RUN echo "y" | sdkmanager "platform-tools" "platforms;android-29" "emulator" && \
+RUN echo "y" | sdkmanager "platform-tools" "build-tools;29.0.3" "platforms;android-29" "emulator" && \
     sdkmanager --install "system-images;android-29;google_apis;x86_64" && \
     avdmanager create avd -n VitrinaEmulator --device "pixel" -k "system-images;android-29;google_apis;x86_64"
 
