@@ -22,7 +22,7 @@ RUN dpkg --add-architecture i386 && \
 
 RUN apt-get install -y --no-install-recommends openjdk-${JDK_VERSION}-jdk && \
     apt-get install -yq --no-install-recommends git wget curl unzip && \
-    apt-get install -yq --no-install-recommends qt5-default && \
+    apt-get install -yq --no-install-recommends qt5-default
 
 RUN java --version
 
@@ -46,9 +46,9 @@ EXPOSE 5037
 EXPOSE 4723
 
 # Install emulator
-RUN echo "y" | sdkmanager "platform-tools" "build-tools;29.0.3" "platforms;android-29" "emulator" && \
-    sdkmanager --install "system-images;android-29;google_apis;x86_64" && \
-    avdmanager create avd -n VitrinaEmulator --device "pixel" -k "system-images;android-29;google_apis;x86_64"
+RUN echo "y" | sdkmanager "platform-tools" "build-tools;31.0.0-rc2" "platforms;android-30" "emulator" && \
+    sdkmanager --install "system-images;android-30;google_apis;x86_64" && \
+    avdmanager create avd -n VitrinaEmulator --device "pixel" -k "system-images;android-30;google_apis;x86_64"
 
 # Install nodejs and appium
 RUN apt-get install -y nodejs && \
