@@ -23,7 +23,6 @@ RUN dpkg --add-architecture i386 && \
 RUN apt-get install -y --no-install-recommends openjdk-${JDK_VERSION}-jdk && \
     apt-get install -yq --no-install-recommends git wget curl unzip && \
     apt-get install -yq --no-install-recommends qt5-default && \
-    apt-get install -yq --no-install-recommends android-tools-adb
 
 RUN java --version
 
