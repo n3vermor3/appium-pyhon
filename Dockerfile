@@ -1,4 +1,4 @@
-FROM python:3.8-slim-buster
+FROM python:slim-buster
 # TODO: собрать свой образ nodejs+python+java+sdk
 
 LABEL maintainer="denischernikovaz@gmail.com"
