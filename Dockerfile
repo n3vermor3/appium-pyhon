@@ -51,6 +51,14 @@ RUN echo "y" | sdkmanager "platform-tools" "build-tools;29.0.3" "platforms;andro
     avdmanager create avd -n VitrinaEmulator --device "pixel" -k "system-images;android-30;google_apis;x86_64"
 
 # Install nodejs and appium
-RUN apt-get install -y nodejs && \
-    curl https://www.npmjs.com/install.sh | sh && \
+RUN apt install nodejs && \
+    nodejs -v
+
+RUN wget https://nodejs.org/dist/v14.17.0/node-v14.17.0-linux-x64.tar.xz && \
+    apt-get install xz-utils && \
+    tar -C /usr/local --strip-components 1 -xJf node-v14.17.0-linux-x64.tar.xz
+
+RUN apt install npm && \
+    npm update npm -g && \
+    npm install npm -g && \
     npm install -g appium
